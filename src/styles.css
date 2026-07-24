@@ -77,32 +77,94 @@ button {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.9;
+}
+
+.logo-wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.12rem;
+  line-height: 1;
+}
+
+.logo-top {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  min-width: 0;
+  gap: 0.45rem;
+  width: 100%;
 }
 
-.logo-mark {
-  display: grid;
-  place-items: center;
-  width: 2.4rem;
-  height: 2.4rem;
-  border: 1px solid var(--gray-300);
-  color: var(--gray-100);
+.logo-rule {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--red), transparent);
+  opacity: 0.85;
+}
+
+.logo-role {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--red);
+  padding-left: 0.32em;
+}
+
+.logo-name {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: clamp(1.35rem, 3.5vw, 1.7rem);
   letter-spacing: 0.06em;
-  flex-shrink: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.logo-text {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.logo-name-dan {
+  color: #fff;
+  position: relative;
+}
+
+.logo-name-dan::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.08em;
+  height: 2px;
+  background: var(--red);
+  transform: scaleX(0.9);
+  transform-origin: left;
+}
+
+.logo-name-ramirez {
+  color: var(--gray-100);
+  background: linear-gradient(180deg, #fff 35%, var(--gray-300) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-wordmark {
+  align-items: flex-start;
+}
+
+.footer-wordmark .logo-top {
+  width: 11.5rem;
+}
+
+.footer-wordmark .logo-name {
+  font-size: 1.85rem;
 }
 
 .nav-desktop {
@@ -498,20 +560,13 @@ button {
 
 .footer-brand {
   display: flex;
-  align-items: center;
-  gap: 0.85rem;
-}
-
-.footer-brand strong {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  letter-spacing: 0.04em;
-  font-weight: 400;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
 }
 
 .footer-brand p {
-  margin: 0.15rem 0 0;
+  margin: 0;
   color: var(--gray-500);
   font-size: 0.85rem;
 }

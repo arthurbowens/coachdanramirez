@@ -1,8 +1,17 @@
 <div class="page" [class.menu-open]="menuOpen()">
   <header class="site-header">
-    <a class="logo" href="#top" (click)="scrollTo('top', $event)">
-      <span class="logo-mark">CDR</span>
-      <span class="logo-text">Coach Dan Ramirez</span>
+    <a class="logo" href="#top" (click)="scrollTo('top', $event)" aria-label="Coach Dan Ramirez">
+      <span class="logo-wordmark">
+        <span class="logo-top">
+          <span class="logo-rule" aria-hidden="true"></span>
+          <span class="logo-role">Coach</span>
+          <span class="logo-rule" aria-hidden="true"></span>
+        </span>
+        <span class="logo-name">
+          <span class="logo-name-dan">Dan</span>
+          <span class="logo-name-ramirez">Ramirez</span>
+        </span>
+      </span>
     </a>
 
     <nav class="nav-desktop" aria-label="Primary">
@@ -185,11 +194,18 @@
   <footer id="contact" class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <span class="logo-mark">CDR</span>
-        <div>
-          <strong>Coach Dan Ramirez</strong>
-          <p>{{ t().footer.tagline }}</p>
+        <div class="logo-wordmark footer-wordmark">
+          <span class="logo-top">
+            <span class="logo-rule" aria-hidden="true"></span>
+            <span class="logo-role">Coach</span>
+            <span class="logo-rule" aria-hidden="true"></span>
+          </span>
+          <span class="logo-name">
+            <span class="logo-name-dan">Dan</span>
+            <span class="logo-name-ramirez">Ramirez</span>
+          </span>
         </div>
+        <p>{{ t().footer.tagline }}</p>
       </div>
 
       <div class="footer-meta">
